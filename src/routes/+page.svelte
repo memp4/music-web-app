@@ -1,8 +1,8 @@
 <div class="main center">
   <h1>Welcome to music app</h1>
   <form method="POST" class="form center">
-    <input type="text" placeholder="Login" />
-    <input type="text" placeholder="Password" />
+    <input type="text" name="login" placeholder="Login" />
+    <input type="text" name="password" placeholder="Password" />
     <button>Log in</button>
   </form>
 </div>
