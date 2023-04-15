@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Modal from "$lib/components/Modal.svelte";
   import type { PageData } from "./$types";
   import Cover from "./Cover.svelte";
   import NewPlaylist from "./NewPlaylist.svelte";

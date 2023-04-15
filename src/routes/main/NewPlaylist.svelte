@@ -9,7 +9,7 @@
   <span class="title">New Playlist</span>
 </div>
 <Modal bind:showModal>
-  <span slot="header">Create new modal</span>
+  <span slot="header">Create new playlist</span>
 </Modal>
 
 <style lang="scss">
