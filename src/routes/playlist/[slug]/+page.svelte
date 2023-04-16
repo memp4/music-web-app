@@ -14,7 +14,7 @@
   <ul class="music-list">
     {#each data.songs as song (song.id)}
       <li>
-        <MusicItem title={song.name} artist={song.artist} />
+        <MusicItem song={song}/>
       </li>
     {/each}
   </ul>

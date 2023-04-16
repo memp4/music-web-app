@@ -1,6 +1,10 @@
 <script lang="ts">
   import { currentSong } from "$lib/stores/music";
-  let check: unknown[];
+  import { getFile } from "$lib/api-helpers/getFile";
+
+  let check: any;
+  $: src = getFile(`http://localhost:5238/Song/${check?.song}`);
+
   currentSong.subscribe((value) => {
     check = value;
   });
@@ -10,9 +14,13 @@
 
 <div class="player">
   <div class="play-buttons">
-    <button on:click={() => console.log(check)}>Play back</button>
-    <button on:click={() => console.log(check)}>Play</button>
-    <button on:click={() => console.log(check)}>Play next</button>
+    {#await src}
+      <p>...Loading</p>
+    {:then src}
+      <audio {src} controls />
+    {:catch error}
+      <p style="color: red">{error.message}</p>
+    {/await}
   </div>
 </div>
 
@@ -22,7 +30,7 @@
     bottom: 0;
     height: 120px;
     width: 100%;
-    background-color: #FA9884;
+    background-color: #fa9884;
     z-index: 10;
     display: flex;
     justify-content: center;

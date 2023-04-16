@@ -1,11 +1,12 @@
 <script lang="ts">
-  export let title: string;
-  export let artist: string;
+  import { currentSong } from "$lib/stores/music";
+
+  export let song: any;
 </script>
 
-<div class="song-item">
-    <div class="title">{title}</div>
-    <div class="artist">{artist}</div>
+<div class="song-item" on:click={() => currentSong.set(song)}>
+  <div class="title">{song.name}</div>
+  <div class="artist">{song.artist}</div>
 </div>
 
 <style>
@@ -20,7 +21,7 @@
     border-radius: 8px;
   }
   .song-item:hover {
-    background-color: #B9EDDD;
+    background-color: #b9eddd;
     cursor: pointer;
   }
   .title {
