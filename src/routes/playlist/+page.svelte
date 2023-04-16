@@ -4,15 +4,16 @@
   import NewPlaylist from "./NewPlaylist.svelte";
 
   export let data: PageData;
+
+  console.log(data);
 </script>
 
 <h1>This is main page</h1>
 <div class="playlists">
   {#each data.playlists as playlist (playlist.id)}
-    <Cover title={playlist.name} />
+    <Cover title={playlist.name} playlistId={playlist.id} />
   {/each}
-  <NewPlaylist  />
-  
+  <NewPlaylist />
 </div>
 
 <style>
