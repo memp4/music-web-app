@@ -2,7 +2,6 @@
   export let showModal: boolean; // boolean
 
   let dialog: HTMLDialogElement; // HTMLDialogElement
-
   $: if (dialog && showModal) dialog.showModal();
 </script>
 
@@ -21,7 +20,6 @@
     </div>
     <hr />
     <slot />
-    <hr />
     <!-- svelte-ignore a11y-autofocus -->
   </div>
 </dialog>
@@ -32,6 +30,7 @@
     border-radius: 0.2em;
     border: none;
     padding: 0;
+    min-height: 700px;
   }
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.3);

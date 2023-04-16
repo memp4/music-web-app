@@ -1,7 +1,7 @@
 import type { PageLoad } from "./$types";
 import { playlists } from "$lib/stores/music";
 
-export const load = (async ({ fetch, params }) => {
+export const load = (async ({ fetch }) => {
   const response = await fetch("http://localhost:5238/Playlist");
   const result = await response.json();
   playlists.set(result);

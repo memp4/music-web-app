@@ -7,9 +7,13 @@ specifiers:
   sass: ^1.59.3
   svelte: ^3.54.0
   svelte-check: ^3.0.1
+  svelte-multiselect: ^8.6.0
   tslib: ^2.4.1
   typescript: ^5.0.0
   vite: ^4.2.0
+
+dependencies:
+  svelte-multiselect: 8.6.0
 
 devDependencies:
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.13.0
@@ -2081,6 +2085,12 @@ packages:
       svelte: 3.57.0
     dev: true
 
+  /svelte-multiselect/8.6.0:
+    resolution: {integrity: sha512-ce1axNn5YrvDwpUA1R4pSKC7oCD8buP7If61VRoOEM5cxMU8t14tLp5fJf27qd8FBJ7vzvJokiN9BUl1u8oL6w==}
+    dependencies:
+      svelte: 3.57.0
+    dev: false
+
   /svelte-preprocess/5.0.3_tdc4krukwjwx5egf7jjst52gju:
     resolution: {integrity: sha512-GrHF1rusdJVbOZOwgPWtpqmaexkydznKzy5qIC2FabgpFyKN57bjMUUUqPRfbBXK5igiEWn1uO/DXsa2vJ5VHA==}
     engines: {node: '>= 14.10.0'}
@@ -2132,7 +2142,6 @@ packages:
   /svelte/3.57.0:
     resolution: {integrity: sha512-WMXEvF+RtAaclw0t3bPDTUe19pplMlfyKDsixbHQYgCWi9+O9VN0kXU1OppzrB9gPAvz4NALuoca2LfW2bOjTQ==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tar/6.1.13:
     resolution: {integrity: sha512-jdIBIN6LTIe2jqzay/2vtYLlBHa3JF42ot3h1dW8Q0PaAG4v8rm0cvpVePtau5C6OKXGGcgO9q2AMNSWxiLqKw==}
