@@ -22,7 +22,7 @@
     bottom: 0;
     height: 120px;
     width: 100%;
-    background-color: #0b2447;
+    background-color: #FA9884;
     z-index: 10;
     display: flex;
     justify-content: center;

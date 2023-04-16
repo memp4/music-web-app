@@ -1,6 +1,6 @@
 export enum ColorPalette {
-  darkest = "#0B2447",
-  dark = "#19376D",
-  balance = "#576CBC",
-  light = "#A5D7E8",
+  player = "#FA9884",
+  back = "#FEF2F4",
+  dark = "#D14D72",
+  accent = "#B9EDDD",
 }

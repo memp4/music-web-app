@@ -26,7 +26,7 @@
   .cover {
     width: 196px;
     height: 196px;
-    background-color: cadetblue;
+    background-color: #D14D72;
   }
   .title {
     font-size: large;

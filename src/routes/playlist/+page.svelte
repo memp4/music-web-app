@@ -17,6 +17,9 @@
 </div>
 
 <style>
+  :global(body) {
+    background-color: #FEF2F4;
+  }
   .playlists {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
