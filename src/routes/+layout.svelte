@@ -38,13 +38,4 @@
     justify-content: center;
     align-items: center;
   }
-
-  .play-buttons {
-    display: flex;
-    gap: 10px;
-
-    button {
-      font-size: 20px;
-    }
-  }
 </style>

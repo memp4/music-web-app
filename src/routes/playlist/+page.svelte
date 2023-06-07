@@ -22,6 +22,7 @@
     </article>
   {/each}
   <article>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
     <p class="add-icon" on:click={() => (isOpenModal = true)}>+</p>
     <footer>
       <h4 class="add-title">New Playlist</h4>
