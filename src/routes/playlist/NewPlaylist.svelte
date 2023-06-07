@@ -15,10 +15,10 @@
   };
 </script>
 
-<div class="playlist">
+<article class="playlist">
   <span class="cover" on:click={() => (showModal = true)}>+</span>
   <span class="title">New Playlist</span>
-</div>
+</article>
 <Modal bind:showModal>
   <span slot="header">Create new playlist</span>
   <div class="modal-body">

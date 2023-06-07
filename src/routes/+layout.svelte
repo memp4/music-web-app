@@ -10,7 +10,9 @@
   });
 </script>
 
-<slot />
+<main class="container">
+  <slot />
+</main>
 
 <div class="player">
   <div class="play-buttons">
