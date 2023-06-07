@@ -1,10 +1,9 @@
 <script lang="ts">
   import { getSongs } from "$lib/api-helpers/getSongs";
   import { postPlaylist } from "$lib/api-helpers/postPlaylist";
-  import Modal from "$lib/components/Modal.svelte";
-  import MultiSelect from "$lib/components/MultiSelect.svelte";
 
-  let showModal = false;
+  export let open = false;
+  export let closeFunc: () => void;
 
   let songs = getSongs();
   let playlistName: string;
@@ -12,34 +11,62 @@
 
   const createPlaylist = () => {
     postPlaylist(playlistName, selectedSongs);
+    closeFunc();
   };
 </script>
 
-<article class="playlist">
-  <span class="cover" on:click={() => (showModal = true)}>+</span>
-  <span class="title">New Playlist</span>
-</article>
-<Modal bind:showModal>
-  <span slot="header">Create new playlist</span>
-  <div class="modal-body">
-    <div class="playlist-name">
-      <label for="playlist-name">Name for new playlist</label>
-      <input type="text" id="playlist-name" bind:value={playlistName} />
-    </div>
-    {#await songs}
-      <p>...Loading</p>
-    {:then songs}
+<!-- {:then songs}
       <MultiSelect id="lang" bind:value={selectedSongs}>
         {#each songs as song (song.id)}
           <option value={song.name}>{song.name}</option>
         {/each}
       </MultiSelect>
+    {:catch error} -->
+
+<dialog {open}>
+  <article style="width: 500px;">
+    <header>
+      <a href="#" class="close" on:click={closeFunc} />
+      <h4>Create new playlist</h4>
+    </header>
+    <div>
+      <label for="playlist-name">Name for a new playlist</label>
+      <input
+        type="text"
+        name="plyalist-name"
+        id="playlist-name"
+        bind:value={playlistName}
+      />
+    </div>
+    {#await songs}
+      <p>...Loading</p>
+    {:then songs}
+      <details role="list">
+        <summary aria-haspopup="listbox">Dropdown</summary>
+        <!-- svelte-ignore a11y-no-noninteractive-element-to-interactive-role -->
+        <ul role="listbox">
+          {#each songs as song (song.id)}
+            <li>
+              <label>
+                <input
+                  type="checkbox"
+                  value={song.name}
+                  bind:group={selectedSongs}
+                />
+                {song.name}
+              </label>
+            </li>
+          {/each}
+        </ul>
+      </details>
     {:catch error}
       <p style="color: red">{error.message}</p>
     {/await}
-  </div>
-  <button class="submit" on:click={createPlaylist}>Submit</button>
-</Modal>
+    <footer>
+      <button on:click={createPlaylist}>Create</button>
+    </footer>
+  </article>
+</dialog>
 
 <style lang="scss">
   .playlist {

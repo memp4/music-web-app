@@ -32,7 +32,7 @@
     bottom: 0;
     height: 120px;
     width: 100%;
-    background-color: #fa9884;
+    background-color: var(--muted-border-color);
     z-index: 10;
     display: flex;
     justify-content: center;

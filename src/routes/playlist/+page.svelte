@@ -1,7 +1,10 @@
 <script lang="ts">
   import type { PageData } from "./$types";
+  import NewPlaylistModal from "./NewPlaylistModal.svelte";
 
   export let data: PageData;
+
+  let isOpenModal = false;
 </script>
 
 <h1>This is main page</h1>
@@ -18,14 +21,16 @@
       </footer>
     </article>
   {/each}
-  <!-- <NewPlaylist /> -->
   <article>
-    <!-- <span class="cover" /> -->
-    <p class="add-icon">+</p>
+    <p class="add-icon" on:click={() => (isOpenModal = true)}>+</p>
     <footer>
       <h4 class="add-title">New Playlist</h4>
     </footer>
   </article>
+  <NewPlaylistModal
+    open={isOpenModal}
+    closeFunc={() => (isOpenModal = false)}
+  />
 </div>
 
 <style>
